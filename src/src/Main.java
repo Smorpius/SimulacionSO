@@ -4,44 +4,24 @@ import java.util.Scanner;
 
 public class Main {
  public static void main(String[] args) {
- ProcessManager pm = new ProcessManager();
- Scanner scanner = new Scanner(System.in);
-
-
+ // Especificar el tamaño del marco de memoria
+ int frameSize = 128; // Ahora podemos personalizar el tamaño del marco
+ 
+ ProcessManager pm = new ProcessManager(frameSize);
+ 
  System.out.println("Simulador de Gestión de Procesos");
- System.out.println("Elige el algoritmo de planificación:");
- System.out.println("1. FCFS");
- System.out.println("2. SJF");
- System.out.println("3. Round Robin");
- System.out.println("4. Prioridad");
- System.out.print("Ingresa el número del algoritmo: ");
- int choice = scanner.nextInt();
- scanner.nextLine();
-
-
- switch (choice) {
- case 1:
- pm.setSchedulingAlgorithm("FCFS");
- break;
- case 2:
- pm.setSchedulingAlgorithm("SJF");
- break;
- case 3:
+ System.out.println("Utilizando algoritmo Round Robin");
+ System.out.println("Tamaño de marco de memoria: " + frameSize + " MB");
+ 
+ // Configurar directamente el algoritmo Round Robin
  pm.setSchedulingAlgorithm("RR");
- System.out.print("Ingresa el quantum para Round Robin: ");
- int quantum = scanner.nextInt();
- scanner.nextLine();
+ 
+ // Establecer un quantum de 3 unidades
+ int quantum = 3;
  pm.setQuantum(quantum);
- break;
- case 4:
- pm.setSchedulingAlgorithm("Priority");
- break;
- default:
- System.out.println("Algoritmo no válido. Usando FCFS por defecto.");
- pm.setSchedulingAlgorithm("FCFS");
- }
-
-
+ System.out.println("Quantum configurado: " + quantum);
+ 
+ // Ejecutar la simulación
  pm.runSimulation(20, 30);
  }
 }
