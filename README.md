@@ -1,7 +1,7 @@
 # SimulacionSO
 
 ## Breve Descripción
-Este proyecto es un simulador de gestión de procesos que implementa algoritmos de planificación (FCFS, SJF, Round Robin, Prioridad) y maneja recursos como CPU y memoria.
+Este proyecto es un simulador de gestión de procesos que implementa algoritmos de planificación Round Robin y maneja recursos como CPU y memoria.
 
 ## Información del Curso
 - **Materia:** Sistemas Operativos
